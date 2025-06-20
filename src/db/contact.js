@@ -1,5 +1,4 @@
 import { model , Schema } from "mongoose";
-import mongoose from "mongoose";
 
 const contactSchema = new Schema({
     name:{
@@ -12,7 +11,7 @@ const contactSchema = new Schema({
     },
     email:{
         type:String,
-        required:true,
+        required:false,
     },
     isFavourite:{
         type:Boolean,
@@ -20,7 +19,9 @@ const contactSchema = new Schema({
     },
     contactType:{
         type:String,
-        enum:["Work","Home","Personal"]
+        enum:["work","home","personal"],
+        required:true,
+        default:"personal"
     },
 
 },
